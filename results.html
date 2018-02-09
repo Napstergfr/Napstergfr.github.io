@@ -1,0 +1,611 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theia</title>
+    <script src="js/vendor/jquery.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body bgcolor="#F2F2F2">
+    <!-- Mobile Menu -->
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-transition="">
+      <!-- Menu -->
+      <ul class="vertical menu mobile-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">search tickets</a></li>
+        <li><a href="selling.html">Sell tickets</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="faq.html">Faq</a></li>
+      </ul>
+    </div>
+    <div class="off-canvas position-right" id="offCanvas-right" data-off-canvas >
+      <!-- Menu -->
+      <ul class="vertical menu">
+        <li><a href="dashboard.html">My Account</a></li>
+      </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <!-- Your page content lives here -->
+      <div class="title-bar show-for-small-only">
+        <div class="title-bar-left">
+          <button type="button" data-open="offCanvas"><img src="img/toggle.png"></button>
+        </div>
+        <div class="title-bar-left">
+          <span class="title-bar-title"></span>
+        </div>
+        <div class="title-bar-right">
+          <ul class="menu">
+            <a href="#"><i class="fa fa-user-o mob-user" aria-hidden="true"></i></a>
+          </ul>
+         <!--  <button class="menu-icon" type="button" data-open="offCanvas-right"></button> -->
+        </div> 
+        <div class="text-center">
+          <img class="logo" src="img/logo.png">
+        </div>
+      </div>
+      <!-- End of Mobile Menu -->
+      <!-- Desktop menu -->
+      <div class="top-bar menu-desktop">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text"><img class="logo" src="img/logo.png"></li>
+            <li><a href="index.html">Home</a></li>
+			<li><a href="search.html">search tickets</a></li>
+			<li><a href="selling.html">Sell tickets</a></li>
+			<li><a href="about.html">about</a></li>
+			<li><a href="faq.html">Faq</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu acc">
+            <a href="dashboard.html">My Account <i class="fa fa-user-o mob-user" aria-hidden="true"></i></a>
+          </ul>
+        </div>
+      </div>
+      <!-- End of Menu Desktop -->
+    </div>
+      
+    <!--End of Navigator//////////////////////////////////-->
+    <div class="mob-result-nav show-for-small-only">
+      <div class="row">
+        <div class="columns small-3">
+         <a href="#"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+        </div>
+        <div class="columns small-9">
+         <p> &nbsp;&nbsp;LONDON - HELSINKI<br>
+          6 Feb - 9 feb / 2 adults</p>
+        </div>
+      </div>
+    </div>
+    <!--/////////////////////////////////////-->
+    <div class="rslt-nav-bg hide-for-small-only">
+      <div class="row rslt-nav">
+      <div class="columns large-12">
+       <form>
+          <input type="text" name="" placeholder="London">
+          <input type="text" name="" placeholder="Helsinki">
+          <input type="date" name="">
+          <input type="date" name="">
+          <input type="text" name="" placeholder="2 adults">
+       </form>
+      </div>
+    </div>
+    </div>
+     <div class="columns medium-12 show-for-medium-only result-tab-nav">
+           <div class="row">
+             <div class="columns medium-3">
+               <h6>Showing 235 results</h6>
+             </div>
+             <div class="columns medium-9">
+               <div class="row">
+                 <div class="columns medium-3 pad_mar_fltrnav_tab">
+                     <a href="#" class="button">Best match</a>
+                 </div>
+                 <div class="columns medium-3 pad_mar_fltrnav_tab">
+                     <a href="#" class="button">cheapest first</a>
+                 </div>
+                 <div class="columns medium-3 pad_mar_fltrnav_tab">
+                     <a href="#" class="button">direct only</a>
+                 </div>
+                 <div class="columns medium-3 pad_mar_fltrnav_tab">
+                     <a href="#" class="button fltrbtn" id="mobfltr1">show filters
+                      <img src="img/fltrdd.png">
+                     </a>
+                 </div>
+               </div>
+             </div>
+           </div>
+     </div>
+    <!--End of result top nav-->
+      <div class="row result-wrapper">
+          <div class="columns large-4 medium-4">
+            <div class="result-filtrs" id="result-fltr">
+              <div class="fltr-btn">
+                <div  id="stops"><i class="fa fa-caret-down starr1" aria-hidden="true"></i>
+                <i class="fa fa-caret-right starr2" aria-hidden="true"></i>
+              <span class="stp">STOPS</span></div>
+                <table id="stops-tab">
+                  <tr>
+                    <td>
+                      <span class="chkbx"><input type="checkbox" id="nstp" name="" />
+                     <label for="nstp"><span></span> &nbsp;Non stop</label></span>
+                    </td>
+                    <td align="right">£489,59</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="chkbx"><input type="checkbox" id="1stp" name="" />
+                     <label for="1stp"><span></span> &nbsp;1 stop</label></span>
+                    </td>
+                    <td align="right">£449,59</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="chkbx"><input type="checkbox" id="2stp" name="" />
+                      <label for="2stp"><span></span> &nbsp;2 stops</label></span>
+                    </td>
+                    <td align="right">£409,59</td>
+                  </tr>
+                </table>
+              </div>
+              <!--stops ends here -->
+              <div class="fltr-btn">
+                <div  id="takeotime"><i class="fa fa-caret-down totarr1" aria-hidden="true"></i>
+                  <i class="fa fa-caret-right totarr2" aria-hidden="true"></i>
+                <span class="stp">TAKE OFF TIMES</span></div>
+                    <div id="takeotime-tab">
+                      <span class="tkott-hd-txt">London  <i class="fa fa-plane fa-rotate-45" aria-hidden="true"></i> Helsinki</span>
+                      <br>
+                      <sub>Take-off London</sub>
+                      <table class="takeofftime clear">
+                        <tr>
+                          <td>from 0:00</td>
+                          <td align="right">to 23:50</td>
+                        </tr>
+                        <tr>
+                          <td>6 Feb</td>
+                          <td align="right">6 Feb</td>
+                        </tr>
+                      </table>
+                      <div class="tk-line">
+                        <div class="tk-thum1"></div>
+                        <div class="tk-thum2"></div>
+                      </div>
+                      <sub>Landing Helsinki</sub>
+                      <table class="takeofftime clear">
+                        <tr>
+                          <td>from 0:00</td>
+                          <td align="right">to 23:50</td>
+                        </tr>
+                        <tr>
+                          <td>6 Feb</td>
+                          <td align="right">6 Feb</td>
+                        </tr>
+                      </table>
+                      <div class="tk-line">
+                        <div class="tk-thum1"></div>
+                        <div class="tk-thum2"></div>               
+                      </div>
+                      <br>
+                    </div>
+                </div> 
+                <!--Ending of take off times-->
+
+                <div class="fltr-btn">
+                <div  id="trvltime"><i class="fa fa-caret-down trat1" aria-hidden="true"></i>
+                  <i class="fa fa-caret-right trat2" aria-hidden="true"></i>
+                <span class="stp">TRAVEL TIME</span></div>
+                    <div id="trvltime-tab">
+                      Didn't get anyting to put in here.
+                    </div>
+                </div> 
+                <!--Ending of travel time-->
+
+                <div class="fltr-btn" >
+                <div id="airlines"><i class="fa fa-caret-down airl1" aria-hidden="true"></i>
+                  <i class="fa fa-caret-right airl2" aria-hidden="true"></i>
+                <span class="stp">TAKE OFF TIMES</span></div>
+                    <div id="airlines-tab">
+                      Didn't get anyting to put in here.
+                    </div>
+                </div>
+                <!--Ending of airlines-->
+
+
+              <script type="text/javascript">
+                $( document ).ready(function() {
+                      $("#stops-tab").hide();
+                      $("#takeotime-tab").hide();
+                      $("#trvltime-tab").hide();
+                      $("#airlines-tab").hide();
+                      $(".starr1").hide();
+                      $(".totarr1").hide();
+                      $(".trat1").hide();
+                      $(".airl1").hide();
+
+                      $("#stops").click(function(){
+                          $("#stops-tab").slideToggle();
+                          $(".starr1").toggle();
+                          $(".starr2").toggle();
+                      });
+
+                      $("#takeotime").click(function(){
+                          $("#takeotime-tab").slideToggle();
+                          $(".totarr1").toggle();
+                          $(".totarr2").toggle();
+                      });
+
+                      $("#trvltime").click(function(){
+                          $("#trvltime-tab").slideToggle();
+                          $(".trat1").toggle();
+                          $(".trat2").toggle();
+                      });
+
+                      $("#airlines").click(function(){
+                          $("#airlines-tab").slideToggle();
+                          $(".airl1").toggle();
+                          $(".airl2").toggle();
+                      });
+                  });
+
+              </script>
+            </div>
+          </div>
+         
+          <!--End of left filer options-->
+          <!-- Filter content section starts here-->
+          <div class="columns large-8 medium-12 hide-for-small-only">
+              <div class="filter-contentbox">
+                <div class="row">
+                  <div class="columns large-4 medium-4 filter-contentbox-l">
+                    <img src="img/easyJet_logo.png">
+                    <h4>£319,99</h4>
+                    <a href="#">SELECT <i class="fa fa-plane fa-rotate-45"></i></a>
+                    <p><strike>AIRLINE <font size="3">£449,59</font></strike><span>SAVINGS + £130,00</span></p>
+                  </div>
+                  <!-- End of filter-contentbox-l-->
+                  <div class="columns large-8 medium-8 filter-contentbox-r">
+                    <table>
+                      <tr>
+                        <td>
+                          <h4>09:05</h4>
+                          <p><span>Helsinki</span><br>
+                                13 mar 2017   
+                          </p>
+
+                        </td>
+                        <td>
+                          <div class="rstline1">
+                            <div class="c-thumb-l">
+                                <div class="thmb-ball1"></div>
+                              <p>LHR</p>
+                            </div>
+                            <div class="c-thumb-m">
+                              <p class="up-text"><i class="fa fa-clock-o" aria-hidden="true"></i> 3h 25m</p>
+                              <div class="thmb-ball3">
+                                <div class="little-oval"></div>
+                              </div>
+                              <p class="down-text">MUC</p>
+                            </div>
+                            <div class="c-thumb-r">
+                              <div class="thmb-ball2"></div>
+                              <p>HKI</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td align="right">
+                          <h4>09:05</h4>
+                          <p><span>London (Heathrow) </span><br>
+                                13 mar 2017
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <hr>
+
+                    <table>
+                      <tr>
+                        <td>
+                          <h4>09:05</h4>
+                          <p><span>Helsinki</span><br>
+                                13 mar 2017   
+                          </p>
+
+                        </td>
+                        <td>
+                          
+                          <div class="rstline1">
+                            <div class="c-thumb-l">
+                                <div class="thmb-ball1"></div>
+                              <p>LHR</p>
+                            </div>
+                            <div class="c-thumb-m">
+                              <p class="up-text"><i class="fa fa-clock-o" aria-hidden="true"></i> 3h 25m</p>
+                              <div class="thmb-ball3">
+                                <div class="little-oval"></div>
+                              </div>
+                              <p class="down-text">MUC</p>
+                            </div>
+                            <div class="c-thumb-r">
+                              <div class="thmb-ball2"></div>
+                              <p>HKI</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td align="right">
+                          <h4>09:05</h4>
+                          <p><span>London (Heathrow) </span><br>
+                                13 mar 2017
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+              <div class="filter-contentbox ">
+                <div class="row">
+                  <div class="columns large-4 medium-4 filter-contentbox-l">
+                    <img src="img/easyJet_logo.png">
+                    <h4>£319,99</h4>
+                    <a href="#">SELECT <i class="fa fa-plane fa-rotate-45"></i></a>
+                    <p><strike>AIRLINE <font size="3">£449,59</font></strike><span>SAVINGS + £130,00</span></p>
+                  </div>
+                  <!-- End of filter-contentbox-l-->
+                  <div class="columns large-8 medium-8 filter-contentbox-r">
+                    <table class="single-row-flt">
+                      <tr>
+                        <td>
+                          <h4>09:05</h4>
+                          <p><span>Helsinki</span><br>
+                                13 mar 2017   
+                          </p>
+
+                        </td>
+                        <td>
+                          
+                          <div class="rstline1">
+                            <div class="c-thumb-l">
+                                <div class="thmb-ball1"></div>
+                              <p>LHR</p>
+                            </div>
+                            <div class="c-thumb-m">
+                              <p class="up-text"><i class="fa fa-clock-o" aria-hidden="true"></i> 3h 25m</p>
+                              <div class="thmb-ball3">
+                                <div class="little-oval"></div>
+                              </div>
+                              <p class="down-text">MUC</p>
+                            </div>
+                            <div class="c-thumb-r">
+                              <div class="thmb-ball2"></div>
+                              <p>HKI</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td align="right">
+                          <h4>09:05</h4>
+                          <p><span>London (Heathrow) </span><br>
+                                13 mar 2017
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+      </div>
+      </div>
+      <div class="row show-for-small-only">
+           <div class="columns small-12">
+              <div class="filter-contentbox-mob">
+                  <div class="row">
+                    <div class="columns small-6">
+                      <h6>SHOWING 235 RESULTS</h6>
+                    </div>
+                    <div class="columns small-6">
+                      <select>
+                        <option><font>SORT BY:</font>BEST MATCH</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td>
+                          <a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png">
+                            </td>
+
+                      </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td><a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png"></td>
+                    </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td><a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png"></td>
+                    </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td><a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png"></td>
+                    </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td><a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png"></td>
+                    </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="filter-contentbox-mob-in">
+                  <table>
+                    <tr>
+                      <td><font size="+1" color="#4CAF50">£499,99</font></td>
+                      <td><font color="#999"><strike>£449,59</strike></font></td>
+                      <td><font size="-2" color="#33C5D7">+ £130,00</font></td>
+                      <td><a href="#"><img src="img/3dots.png" class="dots3"></a>
+                          <img src="img/easyJet_logo.png"></td>
+                    </tr>
+                  </table>  
+                  <hr>
+                    <table>
+                      <tr>
+                        <td><font color="#999" size="-1"><i class="fa fa-plane fa-rotate-45"></i>
+                                LHR-HKI</font>
+                        </td>
+                        <td><font color="#333">09:05-12:30</font></td>
+                        <td><font color="#999" size="-1"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                            3h 25m</font>
+                        </td>
+                        <td><font color="#4CAF50" size="-1">Direct</font></td>
+                      </tr>
+                    </table>
+                </div>
+                <br>
+              </div>
+              <div class="filter-toggle-button" id="mobfltr"><a href="#">FILTER</a></div>
+           </div>
+      </div>
+  <!--End of section1 ////////////////////-->
+  <!-- Section 2 -->
+<!--/////////////////////////// End of desktop version ////////////////////////////////////-->  
+
+    <script type="text/javascript">
+
+      $("#mobfltr, #mobfltr1").click(function(){
+             $("#result-fltr").toggleClass('tglcls'); 
+          
+           });
+    </script>
+ 
+  <!--End of content section-->
+  <!--Footer sarts here /////////////////////////////////-->
+   <div class="footer">
+      <div class="small-12 large-6 medium-6 columns foot-l">
+        <p class="hide-for-small-only">Theiapax searches hundreds of private offers to<br>  help you find and book the flight that suits you best.</p><br>
+        <img class="hide-for-small-only logo" src="img/logo.png"> <span class="hide-for-small-only">All right reserved.</span> &copy;2017 Theiapax.com
+      </div>
+      <div class="small-12 large-6 medium-6 columns">
+        <ul class="no-bullet r-float text-right hide-for-small-only">
+          <li><a href="about.html">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="no-bullet r-float hide-for-small-only hl">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Login</a></li>
+        </ul>
+          <div class="social-sec"><span class="hide-for-small-only">FIND US IN SOCIAL MEDIAS</span>
+             <a href="https://twitter.com/D_Gfr"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+             <a href="https://www.facebook.com/gfrnapster"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </div>
+          <p class="show-for-small-only">is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+      </div>
+   </div>
+  <!--End of footer section-->
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

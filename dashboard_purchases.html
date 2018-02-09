@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theia</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/jquery.js"></script>
+  </head>
+  <body>
+    <!-- Mobile Menu -->
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-transition="">
+      <!-- Menu -->
+      <ul class="vertical menu mobile-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">search tickets</a></li>
+        <li><a href="selling.html">Sell tickets</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="faq.html">Faq</a></li>
+      </ul>
+    </div>
+    <div class="off-canvas position-right" id="offCanvas-right" data-off-canvas >
+      <!-- Menu -->
+      <ul class="vertical menu">
+        <li><a href="dashboard.html">My Account</a></li>
+      </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <!-- Your page content lives here -->
+      <div class="title-bar show-for-small-only">
+        <div class="title-bar-left">
+          <button type="button" data-open="offCanvas"><img src="img/toggle.png"></button>
+        </div>
+        <div class="title-bar-left">
+          <span class="title-bar-title"></span>
+        </div>
+        <div class="title-bar-right">
+          <ul class="menu">
+            <a href="#"><i class="fa fa-user-o mob-user" aria-hidden="true"></i></a>
+          </ul>
+         <!--  <button class="menu-icon" type="button" data-open="offCanvas-right"></button> -->
+        </div> 
+        <div class="text-center"><img class="logo" src="img/logo.png"></div>
+      </div>
+      <!-- End of Mobile Menu -->
+      <!-- Desktop menu -->
+      <div class="top-bar menu-desktop">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text"><img class="logo" src="img/logo.png"></li>
+            <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">search tickets</a></li>
+        <li><a href="selling.html">Sell tickets</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="faq.html">Faq</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu acc">
+            <a href="dashboard.html">My Account <i class="fa fa-user-o mob-user" aria-hidden="true"></i></a>
+          </ul>
+        </div>
+      </div>
+      <!-- End of Menu Desktop -->
+    </div>
+
+    <!--End of Navigator//////////////////////////////////-->
+
+
+  <div class="large-12 columns hero_dborad_purchase">
+    <div class="hero_dborad_purchase_in text-center">
+      <h4>John Watson</h4>
+      <sub>john-watson@gmail.com</sub>
+    </div>
+  </div>
+  <!--End of hero section-->
+   <div class="dashboard_top_nav_mob_dashboard_purchases">
+        <ul>
+            <li><a href="dashboard_purchases.html">Purchases</a></li>
+            <li><a href="admin_users.html">Sales</a></li>
+            <li><a href="2.html">Profile</a></li>
+        </ul>
+    </div>
+   <script type="text/javascript">
+            $(document).ready(function(){
+                    // this will get the full URL at the address bar
+                    var url = window.location.href;
+                    // passes on every "a" tag
+                    $(".dashboard_top_nav_mob_dashboard_purchases a").each(function() {
+                        // checks if its the same on the address bar
+                        if (url == (this.href)) {
+                            $(this).closest("li").addClass("active");
+                            //for making parent of submenu active
+                           //$(this).closest("li").parent().parent().addClass("active");
+                        }
+                    });
+                });      
+        </script>
+<!--End of scond navigator section-->
+        <div class="section1">
+          <div class="line" style="width: 56%; margin: 0 auto;">
+          <span>purchases</span>
+        </div>
+        </div>
+    <div class="row dashboard_section2" style="width: 100%;">
+      <div class="columns large-8 large-centered dashboard_purchases_tab">
+        
+        <table>
+                <tr style="opacity: .3">
+                  
+                    <td><span class="date">DATE</span><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+                    <td>ROUTE</td>
+                    <td>PRICE <i class="fa fa-caret-down" aria-hidden="true"></i></td>
+                </tr>
+               
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+                <tr>
+                    <td class="fw400" style="width: 50%"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td>TXL-MUN</td>
+                   <td>£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr> 
+                <tr>
+                    <td class="fw400" style="border:none;"><font  color="#48dfc2"><i class="fa fa-circle" aria-hidden="true"></i></font><font class="cmplt">Compleated</font>07.02.2017</td>
+                    <td style="border:none;">TXL-MUN</td>
+                   <td style="border:none;">£ 319,99 <i class="fa fa-plane"></i></td>
+                </tr>
+            </table>
+      </div>
+    </div>
+    <br>
+    <br>
+  <!--Footer sarts here /////////////////////////////////-->
+     <div class="footer">
+      <div class="small-12 large-6 medium-6 columns foot-l">
+        <p class="hide-for-small-only">Theiapax searches hundreds of private offers to <br> help you find and book the flight that suits you best.</p><br>
+        <img class="hide-for-small-only logo" src="img/logo.png"> <span class="hide-for-small-only">All right reserved.</span> &copy;2017 Theiapax.com
+      </div>
+      <div class="small-12 large-6 medium-6 columns">
+        <ul class="no-bullet r-float text-right hide-for-small-only">
+          <li><a href="about.html">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="no-bullet r-float hide-for-small-only hl">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Login</a></li>
+        </ul>
+          <div class="social-sec"><span class="hide-for-small-only">FIND US IN SOCIAL MEDIAS</span>
+             <a href="https://twitter.com/D_Gfr"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+             <a href="https://www.facebook.com/gfrnapster"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </div>
+          <p class="show-for-small-only">is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+      </div>
+   </div>
+  <!--End of footer section-->
+
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
